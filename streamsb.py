@@ -11,7 +11,12 @@ API_KEY = os.getenv("STREAMB_API_KEY")
 end_url = 'https://sbchill.com/c/{code}.html'
 
 
-@click.command()
+@click.group()
+def cli():
+    pass
+
+
+@cli.command('upload_streamsb')
 @click.argument('file', type=click.Path(exists=True))
 def upload(file):
     params = {

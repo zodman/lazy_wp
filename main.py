@@ -3,6 +3,7 @@ import rich
 import os
 import click
 import dataset
+import streamsb
 
 load_dotenv()
 
@@ -18,10 +19,13 @@ def cli():
 
 @cli.command()
 @click.argument('wp_id')
+@click.argument('filename')
+@click.argument('source', type=click.Choice("streamsb,".split(", ")))
 @click.argument('content')
-def create(wp_id, content):
+def create(wp_id, filename, source, content):
     trunk = db[TABLE_TRUNK]
-    r = trunk.insert(dict(wp_id=wp_id, content=content))
+    r = trunk.insert(
+        dict(wp_id=wp_id, filename=filename, source=source, content=content))
     rich.print(r)
 
 
@@ -31,6 +35,8 @@ def list():
     for entry in trunk:
         rich.print(entry)
 
+
+cli = click.CommandCollection(sources=[cli, streamsb.cli])
 
 if __name__ == "__main__":
     cli()
