@@ -1,0 +1,6 @@
+dataset
+python-dotenv
+click
+rich
+psycopg2
+requests
