@@ -6,6 +6,8 @@ import dataset
 import streamsb
 import streamtape
 import guessit
+import json
+from guessit.jsonutils import GuessitEncoder
 
 load_dotenv()
 
@@ -34,7 +36,9 @@ def create(wp_id, filename, source, content):
              filename=filename,
              source=source,
              content=content,
-             guessit=guessit_data.__str__()))
+             guessit=json.dumps(guessit_data,
+                                cls=GuessitEncoder,
+                                ensure_ascii=False)))
     rich.print(r)
 
 
