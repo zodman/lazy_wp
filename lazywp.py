@@ -10,7 +10,7 @@ import guessit
 load_dotenv()
 
 DATABASE_URL = os.getenv('DATABASE_URL')
-TABLE_NAME = os.get.env('DATABASE_TABLE')
+TABLE_NAME = os.getenv('DATABASE_TABLE')
 TABLE_TRUNK = f'wp_trunk_{TABLE_NAME}'
 db = dataset.connect(DATABASE_URL)
 
