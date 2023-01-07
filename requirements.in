@@ -4,3 +4,4 @@ click
 rich
 psycopg2
 requests
+guessit

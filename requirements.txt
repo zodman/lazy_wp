@@ -6,6 +6,8 @@
 #
 alembic==1.9.1
     # via dataset
+babelfish==0.6.0
+    # via guessit
 banal==1.0.6
     # via dataset
 certifi==2022.12.7
@@ -20,6 +22,8 @@ dataset==1.5.2
     # via -r requirements.in
 greenlet==2.0.1
     # via sqlalchemy
+guessit==3.5.0
+    # via -r requirements.in
 idna==3.4
     # via requests
 mako==1.2.4
@@ -30,12 +34,18 @@ psycopg2==2.9.5
     # via -r requirements.in
 pygments==2.13.0
     # via rich
+python-dateutil==2.8.2
+    # via guessit
 python-dotenv==0.21.0
     # via -r requirements.in
+rebulk==3.1.0
+    # via guessit
 requests==2.28.1
     # via -r requirements.in
 rich==12.6.0
     # via -r requirements.in
+six==1.16.0
+    # via python-dateutil
 sqlalchemy==1.4.45
     # via
     #   alembic
