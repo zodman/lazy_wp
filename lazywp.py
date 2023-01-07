@@ -23,7 +23,7 @@ def cli():
 @cli.command()
 @click.argument('wp_id')
 @click.argument('filename')
-@click.argument('source', type=click.Choice("streamsb,streamtape".split(", ")))
+@click.argument('source', type=click.Choice("streamsb,streamtape".split(",")))
 @click.argument('content')
 def create(wp_id, filename, source, content):
     trunk = db[TABLE_TRUNK]
