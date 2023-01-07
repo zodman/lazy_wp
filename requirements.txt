@@ -30,7 +30,7 @@ mako==1.2.4
     # via alembic
 markupsafe==2.1.1
     # via mako
-psycopg2==2.9.5
+psycopg2-binary==2.9.5
     # via -r requirements.in
 pygments==2.13.0
     # via rich
